@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EntreTables</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0F172A;
+      color: #F5F1EB;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      background: #1E293B;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: auto;
+    }
+    button {
+      background: #22C55E;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Menu</h1>
+    <p id="table"></p>
+
+    <p>🍽️ Menu du jour</p>
+
+    <button onclick="activerTable()">Activer la table</button>
+  </div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const table = params.get("table");
+
+  document.getElementById("table").innerText =
+    table ? "Table " + table : "Table inconnue";
+
+  function activerTable() {
+    alert("Table activée !");
+  }
+</script>
+
+</body>
+</html>
+
